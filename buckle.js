@@ -18,14 +18,14 @@ var strURL = $("#xmlConfigs").find("xmlURL").text();
     $( "#xmlData" ).load( "strURL" );
 	//     $( "xml" )[0].load( "strURL" );
 
-var objXML = objectifyXML();
+var objSPxml = objectifyXML();
 
 //load options for drop-down select element 
-var strField = objXML.getOWSname("Title"),     //or Title-DTG?
+var strField = objSPxml.getOWSname("Title"),     //or Title-DTG?
     arrTitles = [];
 
-    for(i = 0; i < objXML.rows.length; ++ i) {
-        arrTitles.push(objXML.rows[i].getAttribute(strField));
+    for(i = 0; i < objSPxml.rows.length; ++ i) {
+        arrTitles.push(objSPxml.rows[i].getAttribute(strField));
     }
     
 var strSelect = "<option>Select a Memo</option>";  
@@ -143,12 +143,12 @@ function showContent() {
 var strRecordID = $( "#selectMemo option:selected" ).text(), 
     strFieldID = "",
     strFoundValue = "",
-    objXML = objectifyXML();
+    objSPxml = objectifyXML();
 
     $( "*" ).each(function( i ) {
         //test if element ID has corresponding field in rXML recordset
         strFieldID = this.id;
-        strFoundValue = objXML.xLookup(strFieldID, strRecordID);
+        strFoundValue = objSPxml.xLookup(strFieldID, strRecordID);
           
         if ( strFoundValue.length > 0 ) {
             this.innerHTML = strFoundValue;
