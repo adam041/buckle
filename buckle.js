@@ -8,8 +8,10 @@ $( document ).ready(function() {
 
 //save XML to element on page to prevent the need for multiple server calls
 var strURL = $("#xmlConfigs").find("xmlURL").text();
-    $( "#xmlData" ).load( strURL );
-    //$( "xml" )[0].load( strURL );
+    // $( "#xmlData" ).load( strURL );
+    // $( "xml" )[0].load( strURL );
+    // $( "#xmlDataHolder" ).load( "data.xml" ); //ok
+    $( "#xmlDataHolder" ).load( strURL );
 
 var objSPxml = objectifyXML();
 
