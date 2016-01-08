@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--  reference jQuery / jQuery UI libraries  -->  
+    <script src="https://code.jquery.com/jquery-1.6.min.js"></script>   
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	
+	<!-- buckle js & css-->
+	<script src="https://code.jquery.com/jquery-1.6.min.js"></script>   
+
+	<meta charset="utf-8" />
+    
+    <title>SharePoint show-er demo </title>
+    
+</head>
+
+<body>
+
+<!-- Accordian Main -->
+<div id="accordion">
+<div>
+<h3> Memo 
+    <select id="selectMemo">
+        <option>Waiting for SharePoint</option>
+        <!--programmatically replace on load -->
+    </select>
+</h3>
+    <div>
+    <table>
+        <thead>
+        </thead>
+
+    <tbody>
+        <tr> 
+            <td class="TopHeading" colspan="3">Memorandum</td>
+        </tr>
+        <tr> 
+            <td class="Heading" colspan="3"></td>
+        </tr>
+    
+        <tr>
+            <td>DATE: </td> 
+            <td id="Drafting Date"></td>
+        </tr>                
+        <tr>
+            <td>TO: </td> 
+            <td id="To"></td>
+        </tr>                
+        <tr>
+            <td>THROUGH: </td> 
+            <td id="Through"></td>
+        </tr>         
+        <tr>
+            <td>FROM: </td> 
+            <td id="Section"></td>
+            <td id="From"></td>
+        </tr>         
+        <tr>
+            <td>SUBJECT: </td> 
+            <td id="Title"></td>
+            <td id="Meeting Date and Time"></td>
+            <td id="Location"></td>
+        </tr>
+    </tbody>             
+    </table>             
+
+    <table>
+    <thead>
+        <tr>
+            <th style="text-align:left"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="Heading">OBJECTIVE</td> 
+        </tr>
+        <tr>
+            <td id="Objective"></td> 
+        </tr>
+    
+        <tr>
+            <td class="Heading">BACKGROUND/UPDATE</td> 
+        </tr>
+        <tr>
+            <td id="Background/Update"></td> 
+        </tr>
+    
+        <tr>
+            <td class="Heading">LANGUAGE</td> 
+        </tr>
+        <tr>
+            <td id="Language"></td> 
+        </tr>
+    
+        <tr>
+            <td class="Heading">MEDIA</td> 
+        </tr>
+        <tr>
+            <td id="Media"></td> 
+        </tr>
+                                    
+    </tbody>
+    </table>    
+
+    </div>
+
+<h3>Content One</h3>
+    <div>
+        <span id="Content1"></span>
+    </div>
+
+<h3>Content Two</h3>
+    <div>
+        <span id="Content2"></span>
+    </div>
+    
+<h3>Notes</h3>
+    <div>
+    <table>
+        <tr>
+            <td id="Notes" contentEditable="true" style="border:1px solid black"></td>
+        </tr>
+        <tr>
+            <td><button onclick="saveNote()">Save</button></td>
+        	<td> </td>
+        </tr>
+    </table>
+    </div>
+
+        
+<!-- end of accordion div -->
+</div>
+
+<!-- xml data goes in first xml element of document -->
+<xml id="xmlData"></xml>
+
+<xml id="xmlConfigs">
+    <xmlURL>     </xmlURL>
+    <editURL>    </editURL>
+</xml>
+
+
+</body>
+</html>
