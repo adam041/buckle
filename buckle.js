@@ -10,7 +10,7 @@ $( document ).ready(function() {
 var strURL = $("#xmlConfigs").find("xmlURL").text();
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
-       $( "#xmlDataHolder" ).load( "data.xml" ); //writes URL name, not html to target =(
+  //     $( "#xmlDataHolder" ).load( "data.xml" ); //writes URL name, not html to target =(
    $.get( strURL, function(data) {
    	document.getElementById("xmlDataHolder").innerHTML = data; //make jQuery?
    } );
