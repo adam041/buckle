@@ -1,0 +1,42 @@
+/*  reference jQuery UI theme styling  */
+@import url(https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css);     
+
+body {
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    font-size: 80%;                
+    background-color: #D3D3D3;       
+    }
+    
+th {
+    font-weight: bold;
+    }
+
+td.TopHeading { 
+    text-transform: uppercase;
+    text-decoration: underline; 
+    padding-top:inherit;
+    }    
+
+td.Heading {    
+    text-transform: uppercase;
+    text-decoration: underline; 
+    padding-top:20px;
+    }
+
+td.Participants {
+	min-width: 250px;
+	}
+
+button {
+	display:inline-block;
+	width:75px;
+	height:25px;
+	background-color:slategray;
+	color:mediumblue;
+	font-size:16px;
+}
+    
+#accordion {
+    width: 90%;
+    max-width: 800px;
+    }   
