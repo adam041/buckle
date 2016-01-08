@@ -10,7 +10,9 @@ $( document ).ready(function() {
 var strURL = $("#xmlConfigs").find("xmlURL").text();
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
-       $( "#xmlDataHolder" ).load( "data.xml" );  
+       $( "#xmlData" ).load( "data.xml" );  
+       //$( "#xmlDataHolder" ).load( "data.xml" );  
+
    //$.get( strURL, function(data) {
    //	document.getElementById("xmlDataHolder") = data; //make jQuery?
    //} );
@@ -54,8 +56,10 @@ function objectifyXML() {
 
 	//get XML from first found container in DOM
 	//objSPxml.text = document.getElementsByTagName("xml")[0];
-	objSPxml.text = $( "xml" )[0];
-
+	
+	//objSPxml.text = $( "xml" )[0];
+	objSPxml.text = $( "#xmlData" ).text();
+    
     //get schema
     objSPxml.schema = "";
 
