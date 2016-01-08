@@ -1,0 +1,82 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+     xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+     xmlns:rs='urn:schemas-microsoft-com:rowset'
+     xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+   <s:ElementType name='row' content='eltOnly' rs:CommandTimeout='30'>
+      <s:AttributeType name='ows_LinkTitle' rs:name='Title' rs:number='1'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Meeting_x0020_Date_x0020_and_x00' rs:name='Meeting Date and Time' rs:number='2'>
+         <s:datatype dt:type='datetime' dt:maxLength='8' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_To' rs:name='To' rs:number='3'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Through' rs:name='Through' rs:number='4'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Section' rs:name='Section' rs:number='5'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Objective' rs:name='Objective' rs:number='6'>
+         <s:datatype dt:type='string' dt:maxLength='1073741823' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Drafting_x0020_Date' rs:name='Drafting Date' rs:number='7'>
+         <s:datatype dt:type='datetime' dt:maxLength='8' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Background_x002f_Update' rs:name='Background/Update' rs:number='8'>
+         <s:datatype dt:type='string' dt:maxLength='1073741823' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Language' rs:name='Language' rs:number='9'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Media' rs:name='Media' rs:number='10'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Content1' rs:name='Content1' rs:number='11'>
+         <s:datatype dt:type='string' dt:maxLength='1073741823' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Content2' rs:name='Content2' rs:number='12'>
+         <s:datatype dt:type='string' dt:maxLength='1073741823' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Location' rs:name='Location' rs:number='13'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_From0' rs:name='From' rs:number='14'>
+         <s:datatype dt:type='string' dt:maxLength='512' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_Notes' rs:name='Notes' rs:number='15'>
+         <s:datatype dt:type='string' dt:maxLength='1073741823' />
+      </s:AttributeType>
+      <s:AttributeType name='ows_ID' rs:name='ID' rs:number='16'>
+         <s:datatype dt:type='i4' dt:maxLength='4' />
+      </s:AttributeType>
+   </s:ElementType>
+</s:Schema>
+<rs:data>
+    <z:row ows_LinkTitle='Concept One' ows_Meeting_x0020_Date_x0020_and_x00='1900-01-01 23:59:00' ows_To='Customer' ows_Through='Manager' ows_Section='Sales' ows_Objective='
+  &lt;div&gt;To learn more about knowledge management.&lt;/div&gt;' ows_Background_x002f_Update='
+  &lt;div&gt;Using SharePoint allows staff to generate &amp;quot;paper&amp;quot; without actually using paper.&lt;/div&gt;' ows_Language='English' ows_Media='N/A' ows_Content1='
+  &lt;ul&gt;
+&lt;li&gt;Memo elements are copied and pasted to a SharePoint list.&lt;/li&gt;
+&lt;li&gt;SharePoint can display info as an electronic form, a printable memo, or in a format optimized for a mobile device.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;' ows_Content2='&lt;div class=&quot;ExternalClassEB2EC41107B041229B15186210CEE4A2&quot;&gt;&lt;html&gt;
+  &lt;p style=&quot;text-align:center&quot;&gt;
+    &lt;span id=&quot;ms-rterangepaste-start&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;ms-rterangepaste-start&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;ms-rterangecursor-start&quot;&gt;&lt;/span&gt;
+    &lt;span id=&quot;ms-rterangepaste-start&quot;&gt;&lt;/span&gt;
+    &lt;img style=&quot;height:103px;width:150px;vertical-align:auto;float:left;margin:5px&quot; alt=&quot;&quot; src=&quot;http://img04.deviantart.net/c977/i/2009/239/4/4/awesome_face_by_ajajo.jpg&quot; /&gt;
+    &lt;span id=&quot;ms-rterangepaste-end&quot;&gt;&lt;/span&gt;
+  &lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;AwesomefaceK&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;That Guy&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;​This field supports &lt;em style=&quot;text-decoration:underline;color:green;background-color:yellow&quot;&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline&quot;&gt;rich&lt;/span&gt;&lt;span&gt; text&lt;/span&gt;&lt;/strong&gt;&lt;/em&gt; formatting.  &lt;/p&gt;
+&lt;p&gt;Pictures can be added by upload or web link, but not by drag and drop.&lt;/p&gt;&lt;/html&gt;&lt;/div&gt;' ows_Drafting_x0020_Date='2015-12-30 17:46:28' ows_Location='Your iPad' ows_Notes='&lt;div class=&quot;ExternalClass2BE93039EE3945E6B73D224015B012C6&quot;&gt;&lt;html&gt;
+	  &lt;p&gt;​You can add notes here after your meeting.  Testing remotely.&lt;/p&gt;
+	&lt;/html&gt;&lt;/div&gt;' ows_ID='4' />
+	</rs:data>
+	</xml>
