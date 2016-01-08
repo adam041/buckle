@@ -2,20 +2,13 @@
   $(function() {
     $( "#accordion" ).accordion();
   });
-
-//afterUpdate for select control  
-$( "#selectMemo" ).change(function() {
-  window.alert( "Handler for .change() called." );
-  //doesn't work =(
-});
    
-
 $( document ).ready(function() {
 // .load() to get XML from SharePoint and save to DOM
 
 //save XML to element on page to prevent the need for multiple server calls
 var strURL = $("#xmlConfigs").find("xmlURL").text();
-    $( "#xmlData" ).load( "strURL" );
+    $( "#xmlData" ).load( strURL );
 	//     $( "xml" )[0].load( "strURL" );
 
 var objXML = objectifyXML();
@@ -139,7 +132,6 @@ function showContent() {
 //loads data from the xml to be displayed 
 //to be called by after update of select control
 
-                    //also valid strRecordID = $( "#selectMemo" ).val();
 var strRecordID = $( "#selectMemo option:selected" ).text(), 
     strFieldID = "",
     strFoundValue = "",
