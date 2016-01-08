@@ -11,7 +11,9 @@ var strURL = $("#xmlConfigs").find("xmlURL").text();
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
     // $( "#xmlDataHolder" ).load( "data.xml" ); //ok
-    $( "#xmlDataHolder" ).html() = $.get( strURL );
+   $.get( strURL, function(data) {
+   	$( "#xmlDataHolder" ).html() = data;
+   } );
 
 var objSPxml = objectifyXML();
 
