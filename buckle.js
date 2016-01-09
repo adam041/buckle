@@ -3,24 +3,6 @@
     $( "#accordion" ).accordion();
   });
 
-//Source http://www.ibm.com/developerworks/xml/tutorials/x-processxmljquerytut/
-// Converts passed XML string into a DOM element.
-//  @param xmlStr {String}
-      
-function getXmlDOMFromString(xmlStr){
-          if (window.ActiveXObject && window.GetObject) { 
-		  // for Internet Explorer
-               var dom = new ActiveXObject('Microsoft.XMLDOM');
-               dom.loadXML(xmlStr);
-               return dom;
-          }
-          if (window.DOMParser){ // for other browsers
-               return new DOMParser().parseFromString(xmlStr,'text/xml');
-          }
-          throw new Error( 'No XML parser available' );
-}
-
-   
 $( document ).ready(function() {
 // .load() to get XML from SharePoint and save to DOM
 
@@ -75,32 +57,30 @@ function objectifyXML() {
 	
 	//objSPxml.text = $( "#xmlData" ).text();
     //objSPxml.text = $( "#xmlHolder" ).val();
+
     objSPxml.text = $( "textarea#xmlHolder" ).val();
-    //objSPxml.xml =  $.parseXML( objSPxml.text );
-    
-
-    var xmlString = document.getElementById("xmlHolder").innerHTML;
-    var xmlData   = getXmlDOMFromString(xmlString);
-
-    
+    objSPxml.html = new DOMParser().parseFromString($( "textarea#xmlHolder" ).val(), 'text/html');
+	//can't parse as XML since SharePoint XML may fail QA standards (i.e having html <tags> for multi-line text fields)
+	//function above will NOT work in MSIE
+	
     //get schema
     objSPxml.schema = "";
 
-    if (objSPxml.text.getElementsByTagName("s:AttributeType").length > 0) {
+    if (objSPxml.html.getElementsByTagName("s:AttributeType").length > 0) {
         //  supporting Firefox & MSIE
-        objSPxml.schema = objSPxml.text.getElementsByTagName("s:AttributeType");
+        objSPxml.schema = objSPxml.html.getElementsByTagName("s:AttributeType");
     } else {
         //  supporting Webkit/Chrome/Safari
-        objSPxml.schema = objSPxml.text.getElementsByTagName("AttributeType");
+        objSPxml.schema = objSPxml.html.getElementsByTagName("AttributeType");
     }
     
     //get data rows
-    if (objSPxml.text.getElementsByTagName("z:row").length > 0) {
+    if (objSPxml.html.getElementsByTagName("z:row").length > 0) {
         // supporting Firefox & MSIE
-        objSPxml.rows = objSPxml.text.getElementsByTagName("z:row");
+        objSPxml.rows = objSPxml.html.getElementsByTagName("z:row");
     } else {
         //supporting Webkit/Chrome/Safari
-        objSPxml.rows = objSPxml.text.getElementsByTagName("row");
+        objSPxml.rows = objSPxml.html.getElementsByTagName("row");
     }
 
     objSPxml.getOWSname = function(strName) {
