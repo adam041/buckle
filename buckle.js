@@ -11,7 +11,10 @@ var strURL = $("#xmlConfigs").find("xmlURL").text();
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
        $( "#xmlData" ).load( "data.xml" );  
-       //$( "#xmlDataHolder" ).load( "data.xml" );  
+       //$( "#xmlDataHolder" ).load( "data.xml" ); 
+       
+console.log("showing xmlData " + $( "#xmlData" ).html());
+console.log("showing .get() " + $.get( "data.xml" ));
 
    //$.get( strURL, function(data) {
    //	document.getElementById("xmlDataHolder") = data; //make jQuery?
