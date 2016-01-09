@@ -8,8 +8,9 @@ $( document ).ready(function() {
 
 //save XML to element on page to prevent the need for multiple server calls
 var   strURL = $( "#xmlURL" ).val();
-      $( "#xmlHolder" ).load( strURL );  
-
+      $( "#xmlHolder" ).load( strURL, function() {
+      	
+//stick this inside the function to ensure the loading is done first!
 var objSPxml = objectifyXML();
 
 //load options for drop-down select element 
@@ -26,6 +27,9 @@ var strSelect = "<option>Select a Memo</option>";
     });
 
 $( "#selectMemo" ).html(strSelect);
+
+      } );  
+
   
 //afterUpdate for select control  
 $( "#selectMemo" ).change(function() {
