@@ -59,10 +59,10 @@ function objectifyXML() {
     //objSPxml.text = $( "#xmlHolder" ).val();
 
     objSPxml.text = $( "textarea#xmlHolder" ).val();
-    objSPxml.html = new DOMParser().parseFromString($( "textarea#xmlHolder" ).val(), 'text/html');
+    objSPxml.html = $.parseHTML( objSPxml.text );
+//    objSPxml.html = new DOMParser().parseFromString($( "textarea#xmlHolder" ).val(), 'text/html');
 	//can't parse as XML since SharePoint XML may fail QA standards (i.e having html <tags> for multi-line text fields)
-	//function above will NOT work in MSIE
-	
+
     //get schema
     objSPxml.schema = "";
 
