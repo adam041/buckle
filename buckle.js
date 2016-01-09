@@ -7,12 +7,15 @@ $( document ).ready(function() {
 // .load() to get XML from SharePoint and save to DOM
 
 //save XML to element on page to prevent the need for multiple server calls
-var strURL = $("#xmlConfigs").find("xmlURL").text();
+//var strURL = $("#xmlConfigs").find("xmlURL").text();
+var   strURL = $( "xmlURL" ).text();
+    
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
-       $( "#xmlData" ).load( "data.xml" );  
+    //   $( "#xmlData" ).load( "data.xml" );  
        //$( "#xmlDataHolder" ).load( "data.xml" ); 
-       
+     $( "#xmlHolder" ).load( strURL );  
+
 console.log("showing xmlData " + $( "#xmlData" ).html());
 console.log("showing .get() " + $.get( "data.xml" ));
 
