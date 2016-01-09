@@ -7,21 +7,8 @@ $( document ).ready(function() {
 // .load() to get XML from SharePoint and save to DOM
 
 //save XML to element on page to prevent the need for multiple server calls
-//var strURL = $("#xmlConfigs").find("xmlURL").text();
 var   strURL = $( "#xmlURL" ).val();
       $( "#xmlHolder" ).load( strURL );  
-
-    // $( "#xmlData" ).load( strURL );
-    // $( "xml" )[0].load( strURL );
-    //   $( "#xmlData" ).load( "data.xml" );  
-       //$( "#xmlDataHolder" ).load( "data.xml" ); 
-
-// console.log("showing xmlData " + $( "#xmlData" ).html());
-// console.log("showing .get() " + $.get( "data.xml" ));
-
-   //$.get( strURL, function(data) {
-   //	document.getElementById("xmlDataHolder") = data; //make jQuery?
-   //} );
 
 var objSPxml = objectifyXML();
 
@@ -39,7 +26,6 @@ var strSelect = "<option>Select a Memo</option>";
     });
 
 $( "#selectMemo" ).html(strSelect);
-  
   
 //afterUpdate for select control  
 $( "#selectMemo" ).change(function() {
@@ -67,7 +53,8 @@ function objectifyXML() {
 	
 	//objSPxml.text = $( "#xmlData" ).text();
     objSPxml.text = $( "#xmlHolder" ).val();
-    	
+    objSPxml.xml =  $.parseXML( objSPxml.text );
+    
     //get schema
     objSPxml.schema = "";
 
