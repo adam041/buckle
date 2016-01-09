@@ -9,15 +9,15 @@ $( document ).ready(function() {
 //save XML to element on page to prevent the need for multiple server calls
 //var strURL = $("#xmlConfigs").find("xmlURL").text();
 var   strURL = $( "xmlURL" ).text();
-    
+      $( "#xmlHolder" ).load( strURL );  
+
     // $( "#xmlData" ).load( strURL );
     // $( "xml" )[0].load( strURL );
     //   $( "#xmlData" ).load( "data.xml" );  
        //$( "#xmlDataHolder" ).load( "data.xml" ); 
-     $( "#xmlHolder" ).load( strURL );  
 
-console.log("showing xmlData " + $( "#xmlData" ).html());
-console.log("showing .get() " + $.get( "data.xml" ));
+// console.log("showing xmlData " + $( "#xmlData" ).html());
+// console.log("showing .get() " + $.get( "data.xml" ));
 
    //$.get( strURL, function(data) {
    //	document.getElementById("xmlDataHolder") = data; //make jQuery?
@@ -64,8 +64,10 @@ function objectifyXML() {
 	//objSPxml.text = document.getElementsByTagName("xml")[0];
 	
 	//objSPxml.text = $( "xml" )[0];
-	objSPxml.text = $( "#xmlData" ).text();
-    
+	
+	//objSPxml.text = $( "#xmlData" ).text();
+    objSPxml.text = $( "#xmlHolder" ).val();
+    	
     //get schema
     objSPxml.schema = "";
 
