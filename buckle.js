@@ -52,8 +52,9 @@ function objectifyXML() {
 	//objSPxml.text = $( "xml" )[0];
 	
 	//objSPxml.text = $( "#xmlData" ).text();
-    objSPxml.text = $( "#xmlHolder" ).val();
-    objSPxml.xml =  $.parseXML( objSPxml.text );
+    //objSPxml.text = $( "#xmlHolder" ).val();
+    objSPxml.text = $( "textarea#xmlHolder" ).val();
+    //objSPxml.xml =  $.parseXML( objSPxml.text );
     
     //get schema
     objSPxml.schema = "";
