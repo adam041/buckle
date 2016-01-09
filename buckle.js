@@ -46,22 +46,9 @@ function objectifyXML() {
 
     var objSPxml = {};
 
-	//Note: xml from SharePoint may not recognized be by jQuery as valid xml,
-	//      since multi-line SharePoint list fields contain HTML tags within xml rowsets  
-	//      (i.e. attribute) once escaped characters get parsed
-
-	//get XML from first found container in DOM
-	//objSPxml.text = document.getElementsByTagName("xml")[0];
-	
-	//objSPxml.text = $( "xml" )[0];
-	
-	//objSPxml.text = $( "#xmlData" ).text();
-    //objSPxml.text = $( "#xmlHolder" ).val();
-
     objSPxml.text = $( "textarea#xmlHolder" ).val();
-    objSPxml.html = $($.parseHTML( objSPxml.text ).html();	//parse HTML and wrap output in HTML
-//    objSPxml.html = new DOMParser().parseFromString($( "textarea#xmlHolder" ).val(), 'text/html');
-	//can't parse as XML since SharePoint XML may fail QA standards (i.e having html <tags> for multi-line text fields)
+    objSPxml.html = new DOMParser().parseFromString(objSPxml.text, 'text/html');
+    //can't parse as XML since SharePoint XML may fail QA standards (i.e having html <tags> for multi-line text fields)
 
     //get schema
     objSPxml.schema = "";
