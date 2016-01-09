@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
 //save XML to element on page to prevent the need for multiple server calls
 //var strURL = $("#xmlConfigs").find("xmlURL").text();
-var   strURL = $( "xmlURL" ).val();
+var   strURL = $( "#xmlURL" ).val();
       $( "#xmlHolder" ).load( strURL );  
 
     // $( "#xmlData" ).load( strURL );
