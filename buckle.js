@@ -2,6 +2,24 @@
   $(function() {
     $( "#accordion" ).accordion();
   });
+
+//Source http://www.ibm.com/developerworks/xml/tutorials/x-processxmljquerytut/
+// Converts passed XML string into a DOM element.
+//  @param xmlStr {String}
+      
+function getXmlDOMFromString(xmlStr){
+          if (window.ActiveXObject && window.GetObject) { 
+		  // for Internet Explorer
+               var dom = new ActiveXObject('Microsoft.XMLDOM');
+               dom.loadXML(xmlStr);
+               return dom;
+          }
+          if (window.DOMParser){ // for other browsers
+               return new DOMParser().parseFromString(xmlStr,'text/xml');
+          }
+          throw new Error( 'No XML parser available' );
+}
+
    
 $( document ).ready(function() {
 // .load() to get XML from SharePoint and save to DOM
@@ -59,6 +77,11 @@ function objectifyXML() {
     //objSPxml.text = $( "#xmlHolder" ).val();
     objSPxml.text = $( "textarea#xmlHolder" ).val();
     //objSPxml.xml =  $.parseXML( objSPxml.text );
+    
+
+    var xmlString = document.getElementById("xmlHolder").innerHTML;
+    var xmlData   = getXmlDOMFromString(xmlString);
+
     
     //get schema
     objSPxml.schema = "";
