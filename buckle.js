@@ -14,17 +14,17 @@ var   strURL = $( "#xmlURL" ).val();
 var objSPxml = objectifyXML();
 
 //load options for drop-down select element 
-var strKeyField = $( "#keyField" ).text()
-    strKey = objSPxml.getOWSname("Title"),    
-    arrTitles = [];
+var strKeyField = $( "#keyField" ).val()
+    strKey = objSPxml.getOWSname( strKeyField ),    
+    arrKeys = [];
 
     for(i = 0; i < objSPxml.rows.length; ++ i) {
-        arrTitles.push(objSPxml.rows[i].getAttribute( strKey ));
+        arrKeys.push(objSPxml.rows[i].getAttribute( strKey ));
     }
     
 var strSelect = "<option>Select a Memo</option>";  
-    $.each(arrTitles, function (index){
-        strSelect += "\n" + "<option>" + arrTitles[index] + "</option>";
+    $.each(arrKeys, function (index){
+        strSelect += "\n" + "<option>" + arrKeys[index] + "</option>";
     });
 
 $( "#selectMemo" ).html(strSelect);
@@ -101,10 +101,11 @@ function objectifyXML() {
     };
     
     objSPxml.xLookup = function(strField, strRecordID) {
-    //returns the field value for the corresponding xml record row, using Title as the record ID
+    //returns the field value for the corresponding xml record row, using keyField as the record ID
 
-    var strOWSname = this.getOWSname(strField),
-        strOWSrecordField = this.getOWSname("Title"),   
+    var strKeyField = $( "#keyField" ).val(),
+        strOWSname = this.getOWSname(strField),
+        strOWSrecordField = this.getOWSname( strKeyField ),   
         strOutput = "";
 
         //loop through zRows to find matching record, then get field with matching attribute name
@@ -149,11 +150,12 @@ var strRecordID = $( "#selectMemo option:selected" ).text(),
 
 function saveNote() {
 //save contents of #Notes to Sharepoint
+//https://msdn.microsoft.com/en-us/library/office/hh185011(v=office.14).aspx
+//dynamically read form inputs?
 
 var strNoteHTML = $("#Notes").html();
 var RecordID = "TBD";
 
 window.alert("Support for saving notes coming soon." + "\n" + strNoteHTML );
 
-//https://msdn.microsoft.com/en-us/library/office/hh185011(v=office.14).aspx
 }
