@@ -134,26 +134,33 @@
 </div>
 
 
-<table> <!--style="display:none"-->
+<table id="configs">
+<thead>
 <tr>
+   <th>The configs table is displayed for testing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Holding space for SharePoint XML</td>
     <td> <textarea id="xmlHolder"></textarea> </td>
 </tr>
 <tr>
-    <td> <input id="xmlURL" value="data.xml"></input> </td>
+    <td>URL for XML source</td>
+    <td> <input id="xmlURL" value="https://adam041.github.io/buckle/data.xml"></input> </td>
 </tr>
 <tr>
+    <td>URL for SharePoint list for editing</td>
     <td> <input id="editURL" value="www.zombo.com"></input> </td>
 </tr>
+<tr>
+    <td>Key/Record ID field</td>
+    <td> <input id="keyField" value="Title"></input> </td>
+</tr>
+</tbody>
 </table>
 
-<!-- xml data goes in first xml element of document -->
-<div id="xmlDataHolder" > </div>
-<xml id="xmlData"></xml>
-<!--<xml id="xmlConfigs" style="display:none">-->
-<!--    <xmlURL>data.xml</xmlURL>-->
-<!--    <editURL>    </editURL>-->
-<!--</xml>-->
-
+ 
 
 </body>
 </html>
