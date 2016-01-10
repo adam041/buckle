@@ -173,5 +173,3 @@ function onQueryFailed(sender, args) {
 
     alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
 }
-
-}
