@@ -148,14 +148,30 @@ var strRecordID = $( "#selectMemo option:selected" ).text(),
     }); 
 }
 
-function saveNote() {
-//save contents of #Notes to Sharepoint
-//https://msdn.microsoft.com/en-us/library/office/hh185011(v=office.14).aspx
-//dynamically read form inputs?
 
-var strNoteHTML = $("#Notes").html();
-var RecordID = "TBD";
+function updateListItem(strURL, strListName, intID, strField, strNewValue) {
+//derived from https://msdn.microsoft.com/en-us/library/office/hh185011(v=office.14).aspx#sectionSection2
 
-window.alert("Support for saving notes coming soon." + "\n" + strNoteHTML );
+    var clientContext = new SP.ClientContext( strURL );
+    var oList = clientContext.get_web().get_lists().getByTitle( strListName );
+
+    this.oListItem = oList.getItemById( intID );
+
+    oListItem.set_item( strField, strNewValue );
+
+    oListItem.update();
+
+    clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(this, this.onQueryFailed));
+}
+
+function onQuerySucceeded() {
+
+    alert('Item updated!');
+}
+
+function onQueryFailed(sender, args) {
+
+    alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+}
 
 }
