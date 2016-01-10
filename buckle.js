@@ -14,11 +14,12 @@ var   strURL = $( "#xmlURL" ).val();
 var objSPxml = objectifyXML();
 
 //load options for drop-down select element 
-var strField = objSPxml.getOWSname("Title"),     //or Title-DTG?
+var strKeyField = $( "#keyField" ).text()
+    strKey = objSPxml.getOWSname("Title"),    
     arrTitles = [];
 
     for(i = 0; i < objSPxml.rows.length; ++ i) {
-        arrTitles.push(objSPxml.rows[i].getAttribute(strField));
+        arrTitles.push(objSPxml.rows[i].getAttribute( strKey ));
     }
     
 var strSelect = "<option>Select a Memo</option>";  
