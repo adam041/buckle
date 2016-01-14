@@ -55,7 +55,7 @@
    </s:ElementType>
 </s:Schema>
 <rs:data>
-    <z:row ows_LinkTitle='Concept One' ows_Meeting_x0020_Date_x0020_and_x00='1900-01-01 23:59:00' ows_To='Customer' ows_Through='Manager' ows_Section='Sales' ows_Objective='
+    <z:row ows_LinkTitle='Item One' ows_Meeting_x0020_Date_x0020_and_x00='1900-01-01 23:59:00' ows_To='Customer' ows_Through='Manager' ows_Section='Sales' ows_Objective='
   &lt;div&gt;To learn more about knowledge management.&lt;/div&gt;' ows_Background_x002f_Update='
   &lt;div&gt;Using SharePoint allows staff to generate &amp;quot;paper&amp;quot; without actually using paper.&lt;/div&gt;' ows_Language='English' ows_Media='N/A' ows_Content1='
   &lt;ul&gt;
@@ -70,7 +70,7 @@
     &lt;img style=&quot;height:103px;width:150px;vertical-align:auto;float:left;margin:5px&quot; alt=&quot;&quot; src=&quot;http://img04.deviantart.net/c977/i/2009/239/4/4/awesome_face_by_ajajo.jpg&quot; /&gt;
     &lt;span id=&quot;ms-rterangepaste-end&quot;&gt;&lt;/span&gt;
   &lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;AwesomefaceK&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;Name Surname&lt;/strong&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;That Guy&lt;/strong&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;strong&gt;&lt;/strong&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
